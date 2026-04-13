@@ -64,8 +64,8 @@ Rocket-Project/
 
 ## Hardware Requirements
 
-- Feather M4 Can or other microcontroller boards (e.g., Arduino Uno, Nano, or Mega)
-- 9 Degree of Freedom (e.g., Adafruit LSM9DS1) for acceleration, magnetic field and orientation
+- Feather M4 Can or other microcontroller boards (e.g., Arduino Uno)
+- 9 Degree of Freedom (e.g., Adafruit LSM9DS1) for acceleration, magnetic field and rotaional velocity
 - Pressure, Humidity, and Temperature sensor (e.g., Adafruit MS8607)
 - Custom PCB (see `/PCB` folder for design files)
 - LiPo battery pack suitable for flight
@@ -118,7 +118,7 @@ The payload collects the following data during flight:
 | Pressure        | MS8607                     | hPa   |
 | Temperature     | MS8607                     | °C    |
 | Acceleration    | LSM9DS1                    | m/s²  |
-| Orientation     | LSM9DS1                    | °/s   |
+| Rotaional Velocity| LSM9DS1                  | °/s   |
 | Magnetic Field  | LSM9DS1                    | Guass |
 
 Post-flight data is analyzed to evaluate the rocket's flight profile, apogee, and descent characteristics.
