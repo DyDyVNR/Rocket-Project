@@ -1,4 +1,4 @@
-# 🚀 Rocket Project
+# 🚀 Unmanned Rocket Project
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Arduino-teal.svg)
