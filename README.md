@@ -18,7 +18,6 @@ An Arduino-based unmanned rocket payload system that collects atmospheric and ki
 - [Usage](#usage)
 - [Data & Analysis](#data--analysis)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -43,10 +42,10 @@ This project is part of a course on unmanned vehicles and payload systems, which
 | Category     | Tools / Technologies                        |
 |--------------|---------------------------------------------|
 | Firmware     | C++, Arduino IDE                            |
-| Microcontroller | Arduino (AVR-based)                      |
+| Microcontroller | Feather M4 Ccan OR Arduino (AVR-based)   |
 | PCB Design   | Custom PCB (files in `/PCB`)                |
-| Sensors      | IMU, barometric pressure sensor (onboard)   |
-| Data Output  | Serial logging / onboard storage            |
+| Sensors      | 9DOF and press, humid, & temp sensor        |
+| Data Output  | Serial logging / onboard micro SD card      |
 
 ---
 
@@ -65,11 +64,11 @@ Rocket-Project/
 
 ## Hardware Requirements
 
-- Arduino board (e.g., Arduino Uno, Nano, or Mega)
-- IMU sensor (e.g., MPU-6050) for acceleration and orientation
-- Barometric pressure sensor (e.g., BMP280 or BMP180) for altitude and temperature
+- Feather M4 Can or other microcontroller boards (e.g., Arduino Uno, Nano, or Mega)
+- 9 Degree of Freedom (e.g., Adafruit LSM9DS1) for acceleration, magnetic field and orientation
+- Pressure, Humidity, and Temperature sensor (e.g., Adafruit MS8607)
 - Custom PCB (see `/PCB` folder for design files)
-- LiPo or alkaline battery pack suitable for flight
+- LiPo battery pack suitable for flight
 - USB cable for programming and serial monitoring
 
 ---
@@ -88,7 +87,7 @@ Rocket-Project/
 
 3. **Install required libraries**
    - Open `Sketch > Include Library > Manage Libraries`
-   - Install any libraries referenced in the sketch (e.g., `Wire`, `Adafruit_BMP280`, `MPU6050`)
+   - Install any libraries referenced in the sketch (e.g., `Wire`, `Adafruit_LSM9DS1`, `Adafruit_Sensor`)
 
 4. **Select your board and port**
    - Go to `Tools > Board` and select your Arduino model
@@ -115,11 +114,12 @@ The payload collects the following data during flight:
 
 | Parameter       | Sensor Source              | Unit  |
 |-----------------|----------------------------|-------|
-| Altitude        | Barometric pressure sensor | m     |
-| Atmospheric pressure | Barometric sensor     | hPa   |
-| Temperature     | Barometric sensor          | °C    |
-| Acceleration    | IMU (3-axis)               | m/s²  |
-| Orientation     | IMU (gyroscope)            | °/s   |
+| Humidity        | MS8607                     | %     |
+| Pressure        | MS8607                     | hPa   |
+| Temperature     | MS8607                     | °C    |
+| Acceleration    | LSM9DS1                    | m/s²  |
+| Orientation     | LSM9DS1                    | °/s   |
+| Magnetic Field  | LSM9DS1                    | Guass |
 
 Post-flight data is analyzed to evaluate the rocket's flight profile, apogee, and descent characteristics.
 
