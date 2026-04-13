@@ -2,7 +2,6 @@
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Arduino-teal.svg)
-![Status](https://img.shields.io/badge/status-academic%20project-orange.svg)
 
 An Arduino-based unmanned rocket payload system that collects atmospheric and kinematic data during flight. Developed as part of the PHY-220 course on unmanned vehicles and payload implementation.
 
